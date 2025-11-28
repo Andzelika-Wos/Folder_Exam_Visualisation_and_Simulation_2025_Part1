@@ -1,0 +1,22 @@
+# Ignore only build & user files
+
+# Qt Creator user files
+*.user
+*.pro.user
+*.qmlproject.user
+*.creator.*
+
+# Build folders (CMake/Ninja/qmake)
+build*/
+bin*/
+out*/
+debug*/
+release*/
+
+# Qt auto-generated files
+moc_*
+ui_*
+qrc_*
+
+# Other
+*.autosave
