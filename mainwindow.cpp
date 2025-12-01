@@ -26,16 +26,31 @@ MainWindow::MainWindow(VulkanWindow *vw, QPlainTextEdit *logWidget)
     QPushButton *quitButton = new QPushButton(tr("&Quit"));
     quitButton->setFocusPolicy(Qt::NoFocus);
 
-    QPushButton *nameButton = new QPushButton(tr("&Name")); // Dag 040225
-    nameButton->setFocusPolicy(Qt::NoFocus);                // Dag 040225
 
     //connect quit button to quit-function
     connect(quitButton, &QPushButton::clicked, qApp, &QCoreApplication::quit);
+    quitButton->setStyleSheet(R"(
+    QPushButton
+    {
+        background-color: #d08de3;
+        color: #541818;
+        border-radius: 8px;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    QPushButton:hover {
+        background-color: #a46fb3;
+    }
+    QPushButton:pressed {
+        background-color: #a46fb3;
+    }
+)");
+
     //connect changes in our logger to trigger scroll to end of log window, using a lambda
     connect(mLogWidget, &QPlainTextEdit::textChanged, [logWidget]()
             { logWidget->moveCursor(QTextCursor::End); });
-    //select file to import
-    connect(nameButton, SIGNAL(clicked()), this, SLOT(selectName()));   // Dag 040225
+
 
     //Makes the layout of the program, adding items we have made
     QVBoxLayout *layout = new QVBoxLayout;
@@ -46,7 +61,6 @@ MainWindow::MainWindow(VulkanWindow *vw, QPlainTextEdit *logWidget)
     layout->addWidget(mInfoTab, 2);
     QHBoxLayout *buttonLayout = new QHBoxLayout;
 
-    buttonLayout->addWidget(nameButton, 1); // Dag 040225
     buttonLayout->addWidget(quitButton, 1);
     layout->addLayout(buttonLayout);
 
