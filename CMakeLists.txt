@@ -14,7 +14,6 @@ qt_add_executable(Folder_Exam_Visualisation_and_Simulation_2025_Part1
     Part1_ObjMesh.h
     Part1_VisualObj.cpp
     Part1_VisualObj.h
-    Part1_Vertex
     Part1_Vertex.cpp
     Part1_Vertex.h
     Part1_Utilities.h
