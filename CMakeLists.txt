@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 3.16)
-project(Folder_Exam_Visualisation_and_Simulation_2025 LANGUAGES CXX)
+project(Folder_Exam_Visualisation_and_Simulation_2025_Part1 LANGUAGES CXX)
 
 find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets)
 
 qt_standard_project_setup()
 
-qt_add_executable(Folder_Exam_Visualisation_and_Simulation_2025
+qt_add_executable(Folder_Exam_Visualisation_and_Simulation_2025_Part1
     MainWindow.cpp MainWindow.h
     main.cpp
     Part1_Camera.cpp
@@ -39,12 +39,12 @@ add_custom_target(Shaders
     SOURCES ${SHADER_FILES}
 )
 
-set_target_properties(Folder_Exam_Visualisation_and_Simulation_2025 PROPERTIES
+set_target_properties(Folder_Exam_Visualisation_and_Simulation_2025_Part1 PROPERTIES
     WIN32_EXECUTABLE TRUE
     MACOSX_BUNDLE TRUE
 )
 
-target_link_libraries(Folder_Exam_Visualisation_and_Simulation_2025 PRIVATE
+target_link_libraries(Folder_Exam_Visualisation_and_Simulation_2025_Part1 PRIVATE
     Qt6::Core
     Qt6::Gui
     Qt6::Widgets
@@ -74,21 +74,21 @@ set(Folder_Exam_Visualisation_and_Simulation_2025_resource_files
     "texture_vert.spv"
 )
 
-qt_add_resources(Folder_Exam_Visualisation_and_Simulation_2025 "Folder_Exam_Visualisation_and_Simulation_2025"
+qt_add_resources(Folder_Exam_Visualisation_and_Simulation_2025_Part1 "Folder_Exam_Visualisation_and_Simulation_2025_Part1"
     PREFIX
         "/"
     FILES
-        ${Folder_Exam_Visualisation_and_Simulation_2025_resource_files}
+        ${Folder_Exam_Visualisation_and_Simulation_2025_Part1_resource_files}
 )
 
-install(TARGETS Folder_Exam_Visualisation_and_Simulation_2025
+install(TARGETS Folder_Exam_Visualisation_and_Simulation_2025_Part1
     BUNDLE  DESTINATION .
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
 )
 
 qt_generate_deploy_app_script(
-    TARGET Folder_Exam_Visualisation_and_Simulation_2025
+    TARGET Folder_Exam_Visualisation_and_Simulation_2025_Part1
     OUTPUT_SCRIPT deploy_script
     NO_UNSUPPORTED_PLATFORM_ERROR
 )
@@ -126,9 +126,9 @@ add_custom_target(
     COMMENT "Compiling texture vertex shader"
 )
 
-add_dependencies(Folder_Exam_Visualisation_and_Simulation_2025 PreBuildCommandCF)
-add_dependencies(Folder_Exam_Visualisation_and_Simulation_2025 PreBuildCommandCV)
-add_dependencies(Folder_Exam_Visualisation_and_Simulation_2025 PreBuildCommandTF)
-add_dependencies(Folder_Exam_Visualisation_and_Simulation_2025 PreBuildCommandTV)
+add_dependencies(Folder_Exam_Visualisation_and_Simulation_2025_Part1 PreBuildCommandCF)
+add_dependencies(Folder_Exam_Visualisation_and_Simulation_2025_Part1 PreBuildCommandCV)
+add_dependencies(Folder_Exam_Visualisation_and_Simulation_2025_Part1 PreBuildCommandTF)
+add_dependencies(Folder_Exam_Visualisation_and_Simulation_2025_Part1 PreBuildCommandTV)
 
 
