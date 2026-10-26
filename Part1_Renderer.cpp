@@ -135,8 +135,8 @@ void Renderer::initResources()
 
     /********************************* Create shaders *********************************/
     //Creates our actual shader modules
-    VkShaderModule vertShaderModule = createShader(QStringLiteral(":/texture_vert.spv"));
-    VkShaderModule fragShaderModule = createShader(QStringLiteral(":/texture_frag.spv"));
+    VkShaderModule vertShaderModule = createShader(QStringLiteral("texture_vert.spv"));
+    VkShaderModule fragShaderModule = createShader(QStringLiteral("texture_frag.spv"));
 
     //Updated to more common way to write it:
     VkPipelineShaderStageCreateInfo vertShaderCreateInfoT{};
@@ -154,8 +154,8 @@ void Renderer::initResources()
     VkPipelineShaderStageCreateInfo shaderStagesT[] = { vertShaderCreateInfoT, fragShaderCreateInfoT };
 
     /*************** ColorMaterial ******************/
-    mColorMaterial.vertShaderModule = createShader(QStringLiteral(":/color_vert.spv"));
-    mColorMaterial.fragShaderModule = createShader(QStringLiteral(":/color_frag.spv"));
+    mColorMaterial.vertShaderModule = createShader(QStringLiteral("color_vert.spv"));
+    mColorMaterial.fragShaderModule = createShader(QStringLiteral("color_frag.spv"));
 
     //Updated to more common way to write it:
     VkPipelineShaderStageCreateInfo vertShaderCreateInfoC{};
